@@ -1,0 +1,19 @@
+{
+  "private": true,
+  "scripts": {
+    "prod": "NODE_ENV=production postcss -p --no-progress resources/css/app.css -o public/css/app.css",
+    "dev": "postcss resources/css/app.css -o public/css/app.css"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.1.0",
+    "cssnano": "^4.1.10",
+    "postcss": "^8.2.1",
+    "postcss-cli": "^8.3.1",
+    "postcss-import": "^14.0.0",
+    "postcss-nested": "^5.0.3",
+    "tailwindcss": "^2.0.2"
+  },
+  "nodemonConfig": {
+    "ext": "go,gohtml,css,js,json"
+  }
+}
