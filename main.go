@@ -19,6 +19,8 @@ func main() {
 	}
 	r := mux.NewRouter()
 	r.HandleFunc("/", handler.Index).Methods("GET")
+	r.HandleFunc("/api/v1/quotes/{locale}/{count:[0-9]+}", handler.GetQuotes).Methods("GET")
+	r.HandleFunc("/api/v1/quotes/{locale}", handler.GetQuotes).Methods("GET")
 	r.HandleFunc("/ping", handler.Ping).Methods("GET")
 	r.PathPrefix("/").Handler(http.FileServer(http.Dir("public/")))
 	srv := &http.Server{

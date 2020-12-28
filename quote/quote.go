@@ -18,9 +18,9 @@ import (
 var Quotes map[string][]Quote
 
 type Quote struct {
-	From string
-	Text string
-	URL  string
+	From string `json:"from"`
+	Text string `json:"text"`
+	URL  string `json:"-"`
 }
 
 var twitter = regexp.MustCompile(`^(@)`)
