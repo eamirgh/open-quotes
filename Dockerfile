@@ -33,7 +33,7 @@ WORKDIR /app
 COPY --from=ASSETS /app/public public
 COPY --from=build /app/oq oq
 
-COPY resource/template resource/template
+COPY resources/template resources/template
 COPY data data
 
 EXPOSE 8080
