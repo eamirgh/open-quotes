@@ -40,13 +40,13 @@ func GetQuotes(w http.ResponseWriter, r *http.Request) {
 	}
 	if _, ok := params["count"]; ok {
 		count, err = strconv.Atoi(params["count"])
-		if err!= nil{
+		if err != nil {
 			httpResp(w, http.StatusBadRequest, "something went wrong")
 			return
 		}
 	}
-	qs, err := quote.RandomQuotes(locale,count)
-	if err!= nil{
+	qs, err := quote.RandomQuotes(locale, count)
+	if err != nil {
 		httpResp(w, http.StatusBadRequest, "something went wrong")
 		return
 	}

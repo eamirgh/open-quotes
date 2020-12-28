@@ -78,24 +78,12 @@ func Init() error {
 	return nil
 }
 
-// func generateVerificationToken(length int) string {
-// 	table := [...]byte{'1', '2', '3', '4', '5', '6', '7', '8', '9', '0'}
-// 	b := make([]byte, length)
-// 	n, err := io.ReadAtLeast(rand.Reader, b, length)
-// 	if n != length {
-// 		panic(err)
-// 	}
-// 	for i := 0; i < len(b); i++ {
-// 		b[i] = table[int(b[i])%len(table)]
-// 	}
-// 	return string(b)
-// }
-
 func randomizeQuotes(quotes []Quote, count int) []Quote {
 	rand.Seed(time.Now().UnixNano() * time.Now().UnixNano())
 	rand.Shuffle(len(quotes), func(i, j int) { quotes[i], quotes[j] = quotes[j], quotes[i] })
 	return quotes[:count]
 }
+
 func RandomQuotes(locale string, count int) ([]Quote, error) {
 	if quotes, ok := Quotes[locale]; ok {
 		if len(quotes) <= count {
