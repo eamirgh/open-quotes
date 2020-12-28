@@ -1,1 +1,2 @@
-# open-quotes
+# Open Quotes
+## Free open-source quote API
