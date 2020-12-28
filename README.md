@@ -1,5 +1,7 @@
 # Open Quotes
 
+[![Deploy](https://zarvis.ai/api/open/button.svg)](https://zarvis.ai/api/open)
+
 ##### Free open-source quote API
 
 # TODO:
