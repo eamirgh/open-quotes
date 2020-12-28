@@ -5,8 +5,8 @@ WORKDIR /app
 
 COPY package.json .
 COPY package-lock.json .
-COPY resources .
-COPY public .
+COPY resources resources
+COPY public public
 
 RUN npm i
 RUN npm run prod
@@ -20,7 +20,9 @@ COPY go.mod .
 COPY go.sum .
 
 RUN go install
+
 COPY . .
+
 RUN go build -o oq main.go
 
 FROM alpine:3.12.3 AS EXPORT
