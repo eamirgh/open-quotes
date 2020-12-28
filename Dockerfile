@@ -29,11 +29,12 @@ FROM alpine:3.12.3 AS EXPORT
 LABEL maintainer="Amir Ghaffari<contact@amirghaffari.com>"
 RUN mkdir -p /app/resources
 WORKDIR /app
-EXPOSE 8080
 
-COPY --from=ASSETS public public
+COPY --from=ASSETS /app/public public
+COPY --from=build /app/oq oq
+
 COPY resource/template resource/template
-COPY --from=build oq oq
 COPY data data
 
+EXPOSE 8080
 CMD ./oq
