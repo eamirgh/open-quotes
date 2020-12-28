@@ -5,6 +5,8 @@ WORKDIR /app
 
 COPY package.json .
 COPY package-lock.json .
+COPY postcss.config.js .
+COPY tailwind.config.js .
 COPY resources resources
 COPY public public
 
