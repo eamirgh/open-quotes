@@ -2,6 +2,7 @@ package conf
 
 import "html/template"
 
+var Locales = []string{"en_US"}
 var Tpl *template.Template
 
 func Init() {

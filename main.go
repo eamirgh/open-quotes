@@ -14,7 +14,7 @@ import (
 func main() {
 	conf.Init()
 	err := quote.Init()
-	if err!=nil{
+	if err != nil {
 		log.Fatal(err)
 	}
 	r := mux.NewRouter()
@@ -22,8 +22,8 @@ func main() {
 	r.HandleFunc("/ping", handler.Ping).Methods("GET")
 	r.PathPrefix("/").Handler(http.FileServer(http.Dir("public/")))
 	srv := &http.Server{
-		Handler: r,
-		Addr:    ":8080",
+		Handler:      r,
+		Addr:         ":8080",
 		WriteTimeout: 15 * time.Second,
 		ReadTimeout:  15 * time.Second,
 	}
