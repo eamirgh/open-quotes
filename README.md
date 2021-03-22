@@ -5,7 +5,7 @@
 # TODO:
   - Add Tests
   - Add more locales.
-  - Add more quotes for every locale.
+  - Add more quotes for each locale.
   
 ### Notes:
 Initial quotes were adopted from https://github.com/vinitshahdeo/inspirational-quotes  
